@@ -1,0 +1,19 @@
+{
+  "name": "umc-week6-backend",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "description": "UMC 10th week6 stub backend — Express + JWT + webtoons (list/detail/comments)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "dependencies": {
+    "axios": "^1.7.7",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0",
+    "jsonwebtoken": "^9.0.2"
+  }
+}

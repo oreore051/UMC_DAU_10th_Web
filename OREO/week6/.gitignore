@@ -1,0 +1,27 @@
+# dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# build outputs
+dist/
+build/
+.vite/
+
+# logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# editor
+.DS_Store
+.idea/
+.vscode/*.local
+
+# env (잠재적 비밀)
+.env
+.env.local
+.env.*.local
+
+# package-lock은 커밋 (재현성 위해)
