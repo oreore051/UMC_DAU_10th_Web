@@ -66,7 +66,10 @@ export default function WebtoonList() {
     }
   }, FETCH_THROTTLE_MS)
 
+  // isPending 동안에는 sentinel DOM이 아직 마운트되지 않은 상태(스켈레톤만 렌더).
+  // 데이터가 도착해 sentinel이 생긴 뒤에 observer를 등록해야 한다.
   useEffect(() => {
+    if (isPending) return
     const el = sentinelRef.current
     if (!el) return
     const observer = new IntersectionObserver(
@@ -79,7 +82,7 @@ export default function WebtoonList() {
     )
     observer.observe(el)
     return () => observer.disconnect()
-  }, [throttledFetch])
+  }, [throttledFetch, isPending])
 
   const items = data?.pages.flatMap((p) => p.items) ?? []
 
